@@ -17,7 +17,7 @@ function Home() {
         setMovies(popularMovies)
       } catch (err){
         console.log(err)
-        setError("Failed to get popular movies....")
+        setError(err.message || "Failed to get popular movies.")
       }
       finally{
         setLoading(false)
@@ -45,7 +45,7 @@ function Home() {
       setError(null);
     } catch (err) {
       console.log(err);
-      setError("Failed to search movies....")
+      setError(err.message || "Failed to search movies.")
     } finally {
       setLoading(false)
     }

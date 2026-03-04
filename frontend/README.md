@@ -1,8 +1,33 @@
-# React + Vite
+# Movie App Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite frontend for browsing and searching movies from TMDB.
 
-Currently, two official plugins are available:
+## Local setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Create a local env file:
+   ```bash
+   cp .env.example .env.local
+   ```
+3. Set your TMDB key in `.env.local`:
+   ```env
+   VITE_TMDB_API_KEY=your_tmdb_api_key_here
+   ```
+4. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+
+## Deploy to Vercel
+
+This repository is already configured for Vercel through the root [`vercel.json`](../vercel.json):
+- install command: `npm --prefix frontend install`
+- build command: `npm --prefix frontend run build`
+- output directory: `frontend/dist`
+- SPA fallback route for `react-router-dom` BrowserRouter
+
+Before deploying, add this environment variable in your Vercel project settings:
+- `VITE_TMDB_API_KEY`
